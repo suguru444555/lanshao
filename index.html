@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>myweb</title>
+    <title>123</title>
 </head>
 <body>
     <div class="main">
-           <div class="title">测试中，更多内容待开放</div> 
+           <div class="title">你好</div> 
            <div class="help">
            <input class="input" type="text" placeholder="add sth">
            <div class="button">search</div>
@@ -67,5 +67,27 @@ cursor: pointer;
 }
 
 </style>
+
+<script>
+// ��ȡDOMԪ��
+const searchButton = document.querySelector('.button');
+const searchInput = document.querySelector('.input');
+
+// ���ӵ���¼�����
+searchButton.addEventListener('click', () => {
+    const query = searchInput.value.trim();
+    if (query) {
+        // ���������ؼ��ʲ���ת��Bing����
+        window.location.href = `https://cn.bing.com/search?q=${encodeURIComponent(query)}`;
+    }
+});
+
+// ���ӻس�����������
+searchInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        searchButton.click();
+    }
+});
+</script>
 </body>
 </html>
